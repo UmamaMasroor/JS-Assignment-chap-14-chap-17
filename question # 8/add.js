@@ -3,19 +3,32 @@
 // another array to store score of these three students.
 // Assume that total marks are 500 for each student, display
 // the scores & percentages of students like:
+  
+var studentNames = ["Alina", "Eman", "Sarah"];
+var scores = [];
+var totalMarks = 500;
 
-let Names = ["Sara", " Amina", "Sidra"];
-let scores = [379, 490, 360];
-for (let i = 0; i < Names.length; i++) {
-  let percentage = (scores[i] / 500) * 100;
- console.log(
-      " Score of " + Names[i] +
-     " is " + scores[i] +
-      ", Percentage: " +
-      percentage.toFixed(2) +
-      "%"
-  );
+function calculatePercentage(score) {
+  return (score / totalMarks) * 100;
 }
+
+for (var i = 0; i < studentNames.length; i++) {
+  var score = parseInt(prompt("Enter score for " + studentNames[i]));
+  scores.push(score);
+}
+
+// Display scores and percentages
+for (var i = 0; i < studentNames.length; i++) {
+  var percentage = calculatePercentage(scores[i]);
+  console.log(studentNames[i] + ": Score: " + scores[i] + ", Percentage: " + percentage.toFixed(2) + "%");
+}
+
+
+
+
+
+
+
 // // Array to store student names
 // var studentNames = ["John", "Emma", "Ryan"];
 
